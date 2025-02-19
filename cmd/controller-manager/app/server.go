@@ -39,6 +39,7 @@ import (
 	"kubesphere.io/kubesphere/pkg/controller/kubectl"
 	"kubesphere.io/kubesphere/pkg/controller/loginrecord"
 	"kubesphere.io/kubesphere/pkg/controller/namespace"
+	"kubesphere.io/kubesphere/pkg/controller/nginx"
 	"kubesphere.io/kubesphere/pkg/controller/quota"
 	"kubesphere.io/kubesphere/pkg/controller/role"
 	"kubesphere.io/kubesphere/pkg/controller/rolebinding"
@@ -116,6 +117,8 @@ func init() {
 	runtime.Must(controller.Register(&k8sapplication.Reconciler{}))
 	// kubectl
 	runtime.Must(controller.Register(&kubectl.Reconciler{}))
+	//nginx
+	runtime.Must(controller.Register(&nginx.NginxSetReconciler{}))
 }
 
 func NewControllerManagerCommand() *cobra.Command {
