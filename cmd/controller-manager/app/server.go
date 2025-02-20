@@ -43,7 +43,6 @@ import (
 	"kubesphere.io/kubesphere/pkg/controller/quota"
 	"kubesphere.io/kubesphere/pkg/controller/role"
 	"kubesphere.io/kubesphere/pkg/controller/rolebinding"
-	"kubesphere.io/kubesphere/pkg/controller/roletemplate"
 	"kubesphere.io/kubesphere/pkg/controller/secret"
 	"kubesphere.io/kubesphere/pkg/controller/serviceaccount"
 	"kubesphere.io/kubesphere/pkg/controller/storageclass"
@@ -78,7 +77,7 @@ func init() {
 	runtime.Must(controller.Register(&clusterrolebinding.Reconciler{}))
 	runtime.Must(controller.Register(&role.Reconciler{}))
 	runtime.Must(controller.Register(&rolebinding.Reconciler{}))
-	runtime.Must(controller.Register(&roletemplate.Reconciler{}))
+	//runtime.Must(controller.Register(&roletemplate.Reconciler{}))
 	runtime.Must(controller.Register(&namespace.Reconciler{}))
 	// user management
 	runtime.Must(controller.Register(&user.Reconciler{}))
