@@ -17,6 +17,7 @@ limitations under the License.
 package api
 
 import (
+	"fmt"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
@@ -59,5 +60,6 @@ type NginxSetList struct {
 }
 
 func init() {
+	fmt.Println("tttt")
 	SchemeBuilder.Register(&NginxSet{}, &NginxSetList{})
 }
